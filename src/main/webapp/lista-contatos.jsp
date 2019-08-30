@@ -47,14 +47,14 @@
 					
 					<c:forEach var="pessoa" items="${contatos}">
 						<tr>
-							<td>${pessoa.nome}</td>
-							<td>${pessoa.email}</td>
-							<td>${pessoa.endereco}</td>
-							<td>${pessoa.telefone}</td>
+							<td>${pessoas.nome}</td>
+							<td>${contatos.email}</td>
+							<td>${enderecos.logradouro}</td>
+							<td>${contatos.telefone}</td>
 							<td>
-								<a href="#" onclick="saveContactId(${pessoa.id})" data-toggle="modal" data-target="#modalExemplo">Remover</a>
+								<a href="#" onclick="saveContactId(${pessoas.id})" data-toggle="modal" data-target="#modalExemplo">Remover</a>
 								<span> | </span>
-								<a href="adiciona-contato.jsp?id=${pessoa.id}&nome=${pessoa.nome}&email=${pessoa.email}&endereco=${pessoa.endereco}&telefone=${pessoa.telefone}">Editar</a>
+								<a href="adiciona-contato.jsp?id=${pessoas.id}&nome=${pessoas.nome}&email=${contatos.email}&endereco=${endereco.logradouro}&telefone=${contatos.telefone}">Editar</a>
 							</td>
 						</tr>
 					</c:forEach>

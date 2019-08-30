@@ -24,9 +24,6 @@ public class PessoaDAO {
 			PreparedStatement stmt = this.connection.prepareStatement(SQL);
 
 			stmt.setString(1, pessoa.getNome());
-			stmt.setString(2, pessoa.getEmail());
-			stmt.setString(3, pessoa.getEndereco());
-			stmt.setString(4, pessoa.getTelefone());
 
 			stmt.execute();
 			stmt.close();
@@ -54,9 +51,6 @@ public class PessoaDAO {
 				Pessoa pessoa = new Pessoa();
 				pessoa.setId(rs.getLong("id"));
 				pessoa.setNome(rs.getString("nome"));
-				pessoa.setEmail(rs.getString("email"));
-				pessoa.setEndereco(rs.getString("endereco"));
-				pessoa.setTelefone(rs.getString("telefone"));
 				pessoas.add(pessoa);
 			}
 
@@ -95,9 +89,6 @@ public class PessoaDAO {
 	        PreparedStatement stmt = this.connection.prepareStatement(SQL);
 	        
 	        stmt.setString(1, pessoa.getNome());
-	        stmt.setString(2, pessoa.getEmail());
-	        stmt.setString(3, pessoa.getEndereco());
-	        stmt.setString(4, pessoa.getTelefone());
 	        stmt.setLong(5, pessoa.getId());
 	        stmt.execute();
 	        stmt.close();
